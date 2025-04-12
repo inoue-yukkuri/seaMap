@@ -24,3 +24,22 @@ services:
       - "3001:3001"
     environment:
       - RAILS_ENV=development
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=seamap_development
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
