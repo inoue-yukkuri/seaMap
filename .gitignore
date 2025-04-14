@@ -59,3 +59,19 @@ docker-compose.override.yml
 .vscode/
 *.swp
 *.swo
+
+# Environment normalization:
+/.bundle
+/lib/bundler/man/
+
+# RSpec
+.rspec_status
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore database configuration
+/config/database.yml
+
+# Ignore elevation data
+/elevation_data/combined.csv
