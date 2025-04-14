@@ -8,6 +8,7 @@ RUN apt-get update -qq && \
 ENV RAILS_ENV=development
 ENV RAILS_SERVE_STATIC_FILES=true
 ENV RAILS_LOG_TO_STDOUT=true
+ENV PORT=3001
 
 WORKDIR /app
 
@@ -26,4 +27,4 @@ COPY . .
 EXPOSE 3001
 
 # Railsサーバーの起動
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3001"]
