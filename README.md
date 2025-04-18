@@ -1,11 +1,12 @@
 # SeaMap
 
-React + Ruby on Railsのマルチコンテナアプリケーション
+React + TypeScript + Ruby on Railsのマルチコンテナアプリケーション
 
 ## 技術スタック
 
 ### フロントエンド
 - React
+- TypeScript
 - Node.js
 - Docker
 
@@ -52,8 +53,8 @@ docker-compose exec backend rails db:create db:migrate
 ### フロントエンド
 ```bash
 # コンテナ内でコマンドを実行
-docker-compose exec frontend npm install
-docker-compose exec frontend npm start
+docker-compose exec front npm install
+docker-compose exec front npm start
 ```
 
 ### バックエンド
@@ -61,6 +62,15 @@ docker-compose exec frontend npm start
 # コンテナ内でコマンドを実行
 docker-compose exec backend rails console
 docker-compose exec backend rails routes
+```
+
+## プロジェクト構造
+```
+seaMap/
+├── front/          # React + TypeScriptフロントエンド
+├── backend/        # Ruby on Railsバックエンド
+├── docker/         # Docker関連ファイル
+└── docker-compose.yml
 ```
 
 ## ライセンス
@@ -273,6 +283,7 @@ docker-compose exec backend rails db:migrate
 ## 10. 使用技術スタック
 - フロントエンド
   - React
+  - TypeScript
   - Node.js
   - npm
 - バックエンド
